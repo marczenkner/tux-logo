@@ -1,0 +1,97 @@
+<link rel="import" href="../polymer/polymer.html">
+
+   
+<dom-module id="tux-logo">
+    <template>
+        <style>
+            :host {
+                position: relative;
+                padding: 0;
+                margin: 0;
+            }
+            :host object {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+             
+        </style>
+         
+
+        <object data="{{src}}" width="{{width}}" height="100%">
+            <img src="{{src}}" />
+        </object>  
+    </template>
+    <script>
+        Polymer({
+            is: 'tux-logo',
+            properties: {
+                tuxLogo: {
+                    type: Boolean
+                },
+                tuxLogoBw: {
+                    type: Boolean
+                },
+                tuxLogoReverse: {
+                    type: Boolean
+                },
+                tuxLogoRed: {
+                    type: Boolean
+                },
+                tuxLogoBlack: {
+                    type: Boolean
+                },
+                tuxLogoWhite: {
+                    type: Boolean
+                },
+                tuxHeight:  {
+                    type: Number,
+                    value: ''
+                },
+                tuxWidth: {
+                    type: Number,
+                    value: ''
+                },
+                width: {
+                    type: Number,
+                    value: 50
+                },
+                height: {
+                    type: Number,
+                    value: 50
+                }
+            },
+
+
+            ready: function () {
+                // Assing the image link based on the attribute passed to the component
+               switch(true) {
+                   case this.tuxLogo:
+                        this.src = '/logo/01.svg'
+                        break;
+                   case this.tuxLogoBw:
+                       this.src = '/logo/02.svg'
+                       break;
+                   case this.tuxLogoReverse:
+                       this.src = '/logo/03.svg'
+                       break;
+                   case this.tuxLogoRed:
+                       this.src = '/logo/04.svg'
+                       break;
+                   case this.tuxLogoBlack:
+                       this.src = '/logo/05.svg'
+                       break;
+                   case this.tuxLogoWhite:
+                       this.src = '/logo/06.svg'
+                       break;
+               }
+               // Set the width and height
+                this.width = 200;
+                this.height = 400;
+            }
+
+
+        });
+    </script>
+      
+</dom-module> 
